@@ -1,0 +1,36 @@
+// ░▀█▀░█▀█░█▀█░█░█░▀█▀░█▀▀
+// ░░█░░█░█░█▀▀░█░█░░█░░▀▀█
+// ░▀▀▀░▀░▀░▀░░░▀▀▀░░▀░░▀▀▀
+
+input {
+    keyboard {
+        xkb {
+            layout  "us, ru"
+            options "grp:alt_space_toggle"
+        }
+        numlock
+    }
+
+    touchpad {
+        tap
+        natural-scroll
+        scroll-factor 0.5
+    }
+
+    mouse {
+        scroll-factor 0.5
+        accel-speed -0.35
+       // scroll-method "no-scroll"
+    }
+
+    trackpoint {
+    }
+}
+clipboard {
+    disable-primary
+}
+gestures {
+    hot-corners {
+            off
+    }
+}

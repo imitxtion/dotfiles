@@ -1,0 +1,122 @@
+# Moonlit Sakura
+# Inspired by moonlit sakura branches, cold mist, and soft reflected water.
+
+"ui.background" = { fg = "foreground" }
+"ui.text" = "foreground"
+"ui.text.focus" = { fg = "blossom", modifiers = ["bold"] }
+
+"ui.cursor" = { fg = "background", bg = "ice" }
+"ui.cursor.match" = { fg = "background", bg = "sky" }
+
+"ui.selection" = { bg = "surface2" }
+"ui.selection.primary" = { bg = "surface2" }
+
+"ui.linenr" = "muted"
+"ui.linenr.selected" = "blossom"
+
+"ui.statusline" = { fg = "foreground", bg = "surface" }
+"ui.statusline.inactive" = { fg = "muted", bg = "background" }
+
+"ui.popup" = { fg = "foreground", bg = "surface" }
+"ui.window" = { fg = "surface2" }
+"ui.help" = { fg = "foreground", bg = "surface" }
+
+"ui.menu" = { fg = "foreground", bg = "surface" }
+"ui.menu.selected" = { fg = "background", bg = "ice" }
+
+"ui.virtual" = "muted"
+"ui.virtual.ruler" = { bg = "surface" }
+
+"ui.cursorline.primary" = { bg = "surface" }
+
+"comment" = { fg = "comment_fg", modifiers = ["italic"] }
+
+"constant" = "gold"
+"constant.numeric" = "gold"
+"constant.character.escape" = "lavender"
+
+"string" = "blossom"
+"string.regexp" = "rose"
+
+"character" = "blossom_tint"
+"number" = "gold"
+"boolean" = "rose"
+
+"variable" = "foreground"
+"variable.parameter" = "ice"
+"variable.builtin" = "sky"
+"variable.other.member" = "ice"
+
+"label" = "rose"
+"attribute" = "cyan"
+"type" = "cyan"
+"type.builtin" = "sky"
+
+"property" = "ice"
+
+"function" = "blossom"
+"function.builtin" = "sky"
+"function.method" = "blossom_soft"
+
+"constructor" = "sky"
+
+"special" = "lavender"
+
+"keyword" = "sky"
+"keyword.control" = "sky"
+"keyword.storage" = "lavender"
+"keyword.directive" = "lavender"
+
+"operator" = "foreground"
+
+"namespace" = "muted"
+
+"punctuation" = "muted"
+"punctuation.delimiter" = "muted"
+"punctuation.bracket" = "muted"
+
+"tag" = "rose"
+
+"markup.heading" = { fg = "blossom", modifiers = ["bold"] }
+"markup.bold" = { fg = "foreground", modifiers = ["bold"] }
+"markup.italic" = { fg = "foreground", modifiers = ["italic"] }
+"markup.link.text" = "ice"
+"markup.link.url" = { fg = "sky", modifiers = ["underlined"] }
+"markup.list" = "rose"
+"markup.quote" = { fg = "muted", modifiers = ["italic"] }
+"markup.raw" = "blossom_tint"
+
+"diff.plus" = "leaf"
+"diff.minus" = "rose"
+"diff.delta" = "gold"
+
+"diagnostic.error" = { underline = { style = "curl", color = "rose" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "gold" } }
+"diagnostic.info" = { underline = { style = "curl", color = "ice" } }
+"diagnostic.hint" = { underline = { style = "curl", color = "cyan" } }
+
+"info" = "ice"
+"hint" = "cyan"
+"warning" = "gold"
+"error" = "rose"
+
+[palette]
+background = "#18212a"
+surface = "#1f2a34"
+surface2 = "#2a3642"
+foreground = "#e2e2e5"
+muted = "#9aa9b5"
+comment_fg = "#7c8a96"
+
+blossom = "#8bceff"
+blossom_soft = "#b7c9d9"
+blossom_tint = "#cfc0e8"
+
+sky = "#8bceff"
+ice = "#b7c9d9"
+cyan = "#cfc0e8"
+
+leaf = "#b7c9d9"
+lavender = "#cfc0e8"
+gold = "#b7c9d9"
+rose = "#ffb4ab"

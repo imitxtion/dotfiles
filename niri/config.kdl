@@ -1,0 +1,134 @@
+// https://yalter.github.io/niri/Configuration:-Introduction
+include "keybinds.kdl"
+include "colors.kdl"
+include "inputs.kdl"
+include "monitors.kdl"
+
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+// LAYOUT
+// ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+layout {
+    gaps 5
+    // When to center a column when changing focus
+    center-focused-column "never"
+
+    default-column-width { proportion 0.5; }
+
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 0.75
+    }
+}
+
+window-rule {
+    match app-id="zathura"
+    match app-id="net.ankiweb.Anki"
+    match app-id="superproductivity"
+    opacity 0.85
+    default-column-width { proportion 0.5; }
+}
+
+window-rule {
+    match app-id="helium"
+    open-maximized true
+   // opacity 0.95
+}
+
+window-rule {
+    match app-id="obsidian"
+    match app-id="code"
+    
+    default-column-width { proportion 0.7; }
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="vesktop"
+    opacity 0.95
+}
+
+window-rule {
+    match app-id="com.system76.CosmicTerm"
+    opacity 0.90
+    default-column-width { proportion 0.3; }
+}
+
+window-rule {
+    match app-id="io.ente.auth"
+    opacity 0.8
+    default-column-width { proportion 0.3; }
+}
+
+// global rules
+
+window-rule {
+    match is-active=false
+    geometry-corner-radius 10
+    clip-to-geometry true
+    opacity 0.8
+}
+
+window-rule {
+    match app-id=r#"firefox$"# title="^Picture-in-Picture$"
+    match app-id="org.gnome.Loupe"
+    match app-id="waypaper"
+    match app-id="org.gnome.Showtime"
+    match app-id="org.gnome.Decibels"
+    match app-id="eu.blanchescorner.flavourifier"
+    match title="Java*"
+    open-floating true
+}
+
+// fixes steam notification being in the center of the screen
+window-rule {
+    match app-id="steam" title=r#"^notificationtoasts_\d+_desktop$"#
+    default-floating-position x=10 y=10 relative-to="bottom-right"
+}
+
+// window-rule {
+//     match is-active=true
+//     opacity 1.0
+// }
+
+
+
+layer-rule {
+  match namespace="^noctalia-overview*"
+  place-within-backdrop true
+}
+
+layer-rule {
+  match namespace="^noctalia-(background|launcher-overlay|dock)-.*$"
+}
+debug {
+    honor-xdg-activation-with-invalid-serial
+}
+
+prefer-no-csd
+
+
+
+// ░█▀▀░▀█▀░█▀█░█▀▄░▀█▀░█░█░█▀█
+// ░▀▀█░░█░░█▀█░█▀▄░░█░░█░█░█▀▀
+// ░▀▀▀░░▀░░▀░▀░▀░▀░░▀░░▀▀▀░▀░░
+
+spawn-at-startup "qs" "-c" "noctalia-shell"
+spawn-at-startup "swayidle" "-w" \
+    "timeout" "180" "niri msg action power-off-monitors" \
+    "resume" "niri msg action power-on-monitors" \
+    "timeout" "300" "qs -c noctalia-shell ipc call lockScreen lock" \
+    "timeout" "900" "systemctl suspend" \
+    "before-sleep" "qs -c noctalia-shell ipc call lockScreen lock"
+
+hotkey-overlay {
+    skip-at-startup
+}
+
+// The path is formatted with strftime(3) to give you the screenshot date and time.
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
+
+animations {
+}

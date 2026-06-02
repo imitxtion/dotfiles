@@ -1,0 +1,41 @@
+layout {
+
+    focus-ring {
+        off
+    }
+
+    border {
+        off
+        width 2
+        active-color "#8D987E"
+        inactive-color "#505050"
+        urgent-color "#9b0000"
+    }
+
+    shadow {
+        on
+        // Softness controls the shadow blur radius.
+        softness 30
+
+        // Spread expands the shadow.
+        spread 5
+
+        // Offset moves the shadow relative to the window.
+        offset x=0 y=5
+
+        // You can also change the shadow color and opacity.
+        color "#0007"
+    }
+
+    struts {
+    }
+
+    background-color "transparent"
+
+
+
+}
+
+overview {
+    backdrop-color "#000000"
+}
